@@ -1,0 +1,18 @@
+﻿@model MvcWebStore.Models.Supplier
+
+@{
+    ViewBag.Title = "ProductBySupplier";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ProductBySupplier</h2>
+
+<h2>Browsing Supplier: @Model.CompanyName</h2>
+<ul>
+    @foreach (var product in Model.Products)
+    {
+        <li>
+            @Html.ActionLink(product.ProductName, "ProductDetails", "Product", new { id = product.ProductID }, null)
+        </li>
+    }
+</ul>

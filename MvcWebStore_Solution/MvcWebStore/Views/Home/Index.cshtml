@@ -1,0 +1,31 @@
+﻿@model MvcWebStore.ViewModels.Last6_and_Random3_Products
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>Latest Products</p>
+
+<ul id="categories">
+    @foreach (var product in Model.Last6Products)
+    {
+    <li>
+        @Html.ActionLink(product.ProductName, "ProductDetails", "Product", new { id = product.ProductID }, null)
+    </li>
+    }
+</ul>
+
+<hr/>
+
+<p>Recomended Products</p>
+
+<ul id="categories">
+    @foreach (var product in Model.Random3Products)
+    {
+        <li>
+            @Html.ActionLink(product.ProductName, "ProductDetails", "Product", new { id = product.ProductID }, null)
+        </li>
+    }
+</ul>
+

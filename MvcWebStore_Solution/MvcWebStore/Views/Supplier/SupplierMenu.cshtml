@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MvcWebStore.Models.Supplier>
+
+<ul id="suppliers">
+    @foreach (var sup in Model)
+    {
+        <li>
+            @Html.ActionLink(sup.CompanyName, "ProductBySupplier", "Supplier", new { Supplier = sup.CompanyName }, null)
+        </li>
+    }
+</ul>
+
+
